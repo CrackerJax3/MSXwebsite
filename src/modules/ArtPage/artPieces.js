@@ -1,8 +1,10 @@
 // Art pieces shown on the /art page. Images live in ./images/<piece>/ as
 // NN.webp (full size, max 1920px) and NN-small.webp (thumbnail, max 480px).
+const files = import.meta.glob("./images/*/*.webp", { eager: true, import: "default" });
+
 const img = (piece, name) => ({
-    full: require(`./images/${piece}/${name}.webp`),
-    small: require(`./images/${piece}/${name}-small.webp`),
+    full: files[`./images/${piece}/${name}.webp`],
+    small: files[`./images/${piece}/${name}-small.webp`],
 });
 
 const artPieces = [

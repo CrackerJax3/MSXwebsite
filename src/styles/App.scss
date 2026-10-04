@@ -10,6 +10,7 @@
 @import 'UIstyles.scss';
 @import 'Skewed-divs';
 @import 'Trapezoid-div';
+@import 'Showcase';
 
 body {
   font-family: arial;
@@ -38,4 +39,11 @@ img {
 
 .hidden {
   opacity: 0;
+}
+// Respect the system "reduce motion" setting
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation(); // Use hash for HashRouter
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     // Disable automatic scroll restoration
@@ -10,10 +10,12 @@ export default function ScrollToTop() {
       window.history.scrollRestoration = 'manual';
     }
 
-    window.scrollTo(0, 0); // Manually scroll to top
-  }, [pathname]); // Trigger scroll reset on hash change
+    // Links like /art#fibonacci jump to that section, everything else starts at the top
+    const target = hash && document.getElementById(hash.slice(1));
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [pathname, hash]);
 
-  // Optional cleanup (in case you switch between routers)
   useEffect(() => {
     return () => {
       if ('scrollRestoration' in window.history) {

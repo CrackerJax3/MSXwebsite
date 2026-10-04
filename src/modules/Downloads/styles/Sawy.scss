@@ -142,3 +142,67 @@
 
 
 
+#download-section {
+    color: white;
+    min-height: 100vh;
+
+    .downloads-header {
+        text-align: center;
+        padding-top: 20px;
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 4rem;
+        }
+        h1 {
+            margin: 10px 0 0 0;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+    }
+
+    .link-table h2 {
+        margin: 5px;
+        font-size: 1em;
+        color: white;
+    }
+}
+
+.accordian-fold {
+    margin: 0 30px;
+}
+
+.accordian-tab {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    font-size: 24px;
+    text-align: left;
+    cursor: pointer;
+
+    .accordian-icon {
+        margin: 0;
+        font-size: 36px;
+        transform: rotate(90deg);
+        transition: transform 0.2s;
+        &.collapsed { transform: none; }
+    }
+    .accordian-label { margin: 0; }
+}
+
+.accordian-content {
+    overflow: hidden;
+    background-color: #f9f9f9;
+    color: black;
+    transition: height 0.3s;
+    &.collapsed {
+        height: 0 !important;
+        visibility: hidden;
+    }
+}

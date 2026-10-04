@@ -1,150 +1,17 @@
-body:has(.art-page) {
-    margin: 0;
-}
-
 .art-page {
-    background-color: black;
-    color: white;
-
-    .sticky-header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        margin-top: 20px;
-        text-align: center;
-        z-index: 1000;
-        pointer-events: none;
+    .art-index {
+        position: absolute;
+        bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 30px;
+        padding: 0 30px;
 
         a {
-            pointer-events: auto;
-            color: white;
-            text-decoration: none;
-            user-select: none;
-            font-family: arial;
-            font-weight: bold;
-            font-size: 4rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-    }
-
-    a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .art-intro {
-        position: relative;
-        height: 100vh;
-        min-height: 500px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-size: cover;
-        background-position: center;
-        background-color: #aaa;
-        background-blend-mode: multiply;
-        box-shadow: inset 0 -80px 90px black;
-        text-align: center;
-
-        h3 {
-            margin: 0;
-            font-size: 150px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            animation: slide-down .5s forwards ease-in-out;
-        }
-
-        .art-intro-caption {
-            min-height: 50px;
-            max-width: 70%;
-            p {
-                font-size: 40px;
-                span { animation: blink 0.5s infinite; }
-            }
-        }
-
-        .art-index {
-            position: absolute;
-            bottom: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px 30px;
-            padding: 0 30px;
-
-            a {
-                font-size: 22px;
-                transition: all 0.2s;
-                &:hover { transform: scale(1.05); }
-            }
-        }
-    }
-
-    .art-section {
-        position: relative;
-        height: 100vh;
-        min-height: 600px;
-        overflow: hidden;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-
-        &::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            box-shadow: inset 0 0 100px 20px black;
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%);
-            pointer-events: none;
-            z-index: 1;
-        }
-    }
-
-    .art-bg {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-        &.active { opacity: 1; }
-    }
-
-    .art-text {
-        position: absolute;
-        top: 22%;
-        left: 50px;
-        width: 45%;
-        z-index: 2;
-
-        h3, h4, p, .art-stats {
-            margin: 0;
-            transition: all 1s;
-            &.hidden { transform: translateX(-100vw); }
-        }
-
-        h3 { font-size: 50px; }
-        h4 {
-            margin-top: 10px;
-            font-size: 20px;
-            font-weight: normal;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        p {
-            margin-top: 25px;
-            font-size: 28px;
-        }
-
-        .art-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px 25px;
-            margin-top: 25px;
-            span {
-                font-size: 18px;
-                font-weight: bold;
-                padding-bottom: 4px;
-                border-bottom: 2px solid white;
-            }
+            font-size: 22px;
+            transition: all 0.2s;
+            &:hover { transform: scale(1.05); }
         }
     }
 
@@ -166,43 +33,13 @@ body:has(.art-page) {
         cursor: pointer;
         opacity: 0.6;
         transition: opacity 0.2s;
-        &:hover, &.active { opacity: 1; }
+        &:hover, &:focus-visible, &.active { opacity: 1; }
         &.active { outline: 2px solid white; }
         &.hidden { opacity: 0; }
     }
 
-    .art-footer {
-        padding: 60px 0;
-        text-align: center;
-        a { font-size: 30px; }
-    }
-
-    @media (max-width: 1300px) {
-        .art-intro {
-            h3 { font-size: 120px; }
-            .art-intro-caption p { font-size: 30px; }
-        }
-    }
-
     @media (max-width: 800px) {
-        .sticky-header a { font-size: 3rem; }
-        .art-intro {
-            h3 { font-size: 80px; }
-            .art-intro-caption p { font-size: 25px; }
-            .art-index a { font-size: 16px; }
-        }
-        .art-section::after {
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 60%);
-        }
-        .art-text {
-            top: 110px;
-            left: 25px;
-            width: calc(100% - 50px);
-            h3 { font-size: 35px; }
-            h4 { font-size: 15px; }
-            p { font-size: 20px; }
-            .art-stats span { font-size: 14px; }
-        }
+        .art-index a { font-size: 16px; }
         .art-thumbs {
             right: auto;
             left: 30px;
@@ -216,7 +53,6 @@ body:has(.art-page) {
     }
 
     @media (max-width: 550px) {
-        .art-intro h3 { font-size: 55px; }
         .art-thumb {
             width: 50px;
             height: 40px;

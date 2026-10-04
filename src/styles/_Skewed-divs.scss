@@ -72,3 +72,20 @@
         object-fit: cover;
     }
 }
+// Tiles that link somewhere
+a.grid-el {
+    display: block;
+    color: white;
+    text-decoration: none;
+
+    .skewed-img { transition: transform 0.4s; }
+    &:hover, &:focus-visible {
+        .skewed-img.left { transform: skew(-10deg) scale(1.05); }
+        .skewed-img.right { transform: skew(10deg) scale(1.05); }
+        h3 { text-decoration: underline; }
+    }
+    &:focus-visible {
+        outline: 3px solid white;
+        outline-offset: -6px;
+    }
+}
