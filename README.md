@@ -14,8 +14,11 @@ npm run preview  # serve dist/ locally
 
 ## Deploy
 
-`npm run deploy` builds the site and publishes `dist/` to the `gh-pages` branch.
-GitHub Pages serves it at the custom domain in `public/CNAME`.
+Every push to the main working branch runs `.github/workflows/deploy.yml`, which
+lints, builds and publishes `dist/` to the `gh-pages` branch. GitHub Pages serves
+that branch at the custom domain in `public/CNAME`.
+
+To deploy by hand instead, run `npm run deploy`.
 
 ## Where things live
 
