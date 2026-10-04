@@ -5,6 +5,7 @@ import Projects from './modules/Projects/Projects.js';
 import ScrollToTop from './modules/Tools/ScrollToTop.js'
 import PrivacyPolicy from './modules/PrivacyPolicy/PrivacyPolicy.js';
 import SawyDownloads from './modules/Downloads/SawyDownloads.js'
+import Art from './modules/ArtPage/Art.js';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path={"/projects"} element={<Projects/>}/>
           <Route path={"/privacy"} element={<PrivacyPolicy/>}/>
           <Route path={"/downloads"} element={<SawyDownloads/>}/>
+          <Route path={"/art"} element={<Art/>}/>
         </Routes>
       </HashRouter>
     </div>

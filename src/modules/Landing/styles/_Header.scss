@@ -64,6 +64,23 @@
     }
   }
 
+.sticky-header .art-link {
+    position: fixed;
+    top: 45px;
+    left: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transition: all 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    @media (max-width: 550px) {
+      font-size: 22px;
+    }
+}
+
 .whatsapp-icon {
     width: 50px;
     position: fixed;

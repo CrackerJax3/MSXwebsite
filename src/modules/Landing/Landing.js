@@ -7,6 +7,7 @@ import Scalable from '../ScalePage/Scalable';
 import Impact from '../ImpactPage/ImpactPage';
 import Everyone from '../EveryonePage/Everyone';
 import TypingEffect from '../Tools/TypingEffect';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   const toggleHeaderTrigger = (trigger) => { setHeaderTriggered(trigger) }
@@ -41,6 +42,7 @@ const LandingPage = () => {
           </h1>
           <TypingEffect words={["", "MAKER SPACE EXPLORATION"]} index={(headerTriggered ? 1 : 0)}  typeSpeed={50} delSpeed={20} flicker={false}/>
         </div>
+        <Link to="/art" className="underline-anim art-link">ART</Link>
         <img src={require("./res/whatsapp-svgrepo-com.png")} alt="WhatsApp" className="whatsapp-icon" onClick={toggleNumber}/>
         <div className={"phone-number" + (showNumber ? "" : " collapsed")}>SA: +966 55 819 9114 <br/> US: +1 832 273 1434</div>
       </header>
