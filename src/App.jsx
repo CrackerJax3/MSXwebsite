@@ -12,7 +12,7 @@ import About from './modules/AboutPage/About';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <ScrollToTop />
         <PageMeta />
         <Routes>

@@ -27,6 +27,11 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
+        env:
+          # Preview at https://crackerjax3.github.io/MSXwebsite/ (no custom domain, not indexed).
+          # To go live on msxbocachica.org, delete these two lines.
+          SITE_BASE: /MSXwebsite/
+          SITE_URL: https://crackerjax3.github.io/MSXwebsite
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
