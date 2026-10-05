@@ -18,10 +18,9 @@ Every push to the main working branch runs `.github/workflows/deploy.yml`, which
 lints, builds and publishes `dist/` to the `gh-pages` branch. GitHub Pages serves
 that branch at the custom domain in `public/CNAME`.
 
-The workflow currently builds a **preview** for
-https://crackerjax3.github.io/MSXwebsite/ (no custom domain, `noindex`). To go
-live on msxbocachica.org, delete the `SITE_BASE` and `SITE_URL` lines in the
-workflow. The next deploy then includes the `CNAME` file and normal search tags.
+In Matteo-Y/MSX-Site the workflow builds the live site for msxbocachica.org.
+In CrackerJax3/MSXwebsite it builds a preview for
+https://crackerjax3.github.io/MSXwebsite/ (no custom domain, `noindex`).
 
 To deploy by hand instead, run `npm run deploy` (production build).
 
